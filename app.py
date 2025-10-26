@@ -36,7 +36,7 @@ st.session_state["_blocks"] = BLOCKS
 # ----------------------
 @st.cache_resource
 def get_store() -> GoogleSheetsStoreWithLocks:
-    sheet_id = st.secrets["1DnV3Zcqm-G05H42R9nGo0p8YCE-Ycur6UigeO3p_gpc"]
+    sheet_id = st.secrets["sheet_id"]
     return GoogleSheetsStoreWithLocks(sheet_id, ws_resv="reservations", ws_vers="versions", ws_lock="locks")
 
 store = get_store()
